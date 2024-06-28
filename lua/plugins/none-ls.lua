@@ -11,6 +11,13 @@ return {
 				-- null_ls.builtins.diagnostics.eslint_d,
       },
     })
+    vim.diagnostic.config({
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+      virtual_text = false,
+    })
+    vim.diagnostic.setqflist({ open = false })
 
     vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
   end
