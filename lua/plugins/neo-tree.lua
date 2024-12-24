@@ -9,15 +9,24 @@ return {
   config = function()
     local ntree = require('neo-tree')
     ntree.setup({
+      -- require('neo-tree.command').execute({
+      --   position = "right",
+      --   source = "filesystem"
+      -- }),
+      filesysem = {
+        hijacks_netrw_behavior = "disabled"
+      },
       event_handlers = {
 
         {
           event = "file_opened",
           handler = function()
             -- auto close
-            -- vimc.cmd("Neotree close")
+            --  vimc.cmd("Neotree close")
             -- OR
-            -- require("neo-tree.command").execute({ action = "close" })
+            -- require("neo-tree.command").execute({
+            --   position = "right"
+            -- })
           end
         },
 

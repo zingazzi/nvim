@@ -8,16 +8,17 @@ return {
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.completion.spell,
         null_ls.builtins.diagnostics.erb_lint,
-				-- null_ls.builtins.diagnostics.eslint_d,
+        --null_ls.builtins.diagnostics.eslint_d,
+        --null_ls.builtins.diagnostics.phpactor,
       },
     })
     vim.diagnostic.config({
       signs = true,
       underline = true,
       update_in_insert = false,
-      virtual_text = false,
+      virtual_text = true,
     })
-    vim.diagnostic.setqflist({ open = false })
+    vim.diagnostic.setqflist({ open = true })
 
     vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
   end
